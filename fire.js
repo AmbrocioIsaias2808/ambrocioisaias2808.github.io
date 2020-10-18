@@ -3,6 +3,7 @@
 let canvas, width, height, ctx;
 let fireworks = [];
 let particles = [];
+var numberPerTime = 1/4;
 
 function setup() {
 	canvas = document.getElementById("canvas");
@@ -35,9 +36,9 @@ function loop(){
 		if(particles[i].lifetime>80) particles.splice(i,1);
 	}
 
-	if(Math.random()<1/5) fireworks.push(new Firework(Math.random()*(width-200)+100));
+	if(Math.random()<numberPerTime) fireworks.push(new Firework(Math.random()*(width-200)+100));
 }
-setInterval(loop, 1/60);
+setInterval(loop, 1/40);
 //setInterval(loop, 100/60);
 class Particle{
 	constructor(x, y, col){
@@ -127,7 +128,11 @@ function setSize(canv){
 	canv.style.height = "100%";
 	width = window.screen.width;
 	height = window.screen.height;
-
+	if(width<600){
+		numberPerTime=1/10;
+	}else{
+		numberPerTime=1/4
+	}
 	canv.width = width*window.devicePixelRatio;
 	canv.height = height*window.devicePixelRatio;
 	canvas.getContext("2d").scale(window.devicePixelRatio, window.devicePixelRatio);
