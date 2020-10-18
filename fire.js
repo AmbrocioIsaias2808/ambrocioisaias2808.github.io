@@ -128,6 +128,7 @@ function setSize(canv){
 	canv.style.height = "100%";
 	width = window.screen.width;
 	height = window.screen.height;
+	alert(width);
 	if(width<600){
 		numberPerTime=1/10;
 	}else{
