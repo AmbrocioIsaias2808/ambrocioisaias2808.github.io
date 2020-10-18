@@ -44,7 +44,7 @@ class Particle{
 		this.x = x;
 		this.y = y;
 		this.col = col;
-		this.vel = randomVec(5);
+		this.vel = randomVec(2);
 		this.lifetime = 0;
 	}
 
@@ -60,7 +60,7 @@ class Particle{
 	draw(){
 		ctx.globalAlpha = Math.max(1-this.lifetime/80, 0);
 		ctx.fillStyle = this.col;
-		ctx.fillRect(this.x, this.y, 3, 10);
+		ctx.fillRect(this.x, this.y, 4, 3);
 	}
 }
 
@@ -123,13 +123,13 @@ function randomVec(max){
 }
 
 function setSize(canv){
-	canv.style.width = (innerWidth) + "px";
-	canv.style.height = (innerHeight) + "px";
-	width = innerWidth;
-	height = innerHeight;
+	canv.style.width = "100%";
+	canv.style.height = "100%";
+	width = window.screen.width;
+	height = window.screen.height;
 
-	canv.width = innerWidth*window.devicePixelRatio;
-	canv.height = innerHeight*window.devicePixelRatio;
+	canv.width = width*window.devicePixelRatio;
+	canv.height = height*window.devicePixelRatio;
 	canvas.getContext("2d").scale(window.devicePixelRatio, window.devicePixelRatio);
 }
 
@@ -141,4 +141,4 @@ function windowResized(){
 	setSize(canvas);
 	ctx.fillStyle = "#000000";
 	ctx.fillRect(0, 0, width, height);
-}
+}322
