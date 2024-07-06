@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Play YouTube Video on Button Click</title>
+</head>
+<body>
+    <!-- Step 1: Embed the YouTube Video -->
+    <div id="player"></div>
+
+    <!-- Step 2: Add a Button -->
+    <button id="playButton">Play Video</button>
+
+    <!-- Step 3: JavaScript to Control Video -->
+    <script>
+        // Load the IFrame Player API code asynchronously.
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '360',
+                width: '640',
+                videoId: '4sZmPHJPvZE', // Replace VIDEO_ID with your YouTube video ID
+            });
+        }
+
+        // Add event listener to the button
+        document.getElementById('playButton').addEventListener('click', function() {
+            player.playVideo();
+        });
+    </script>
+</body>
+</html>
