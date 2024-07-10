@@ -1,0 +1,55 @@
+
+body{
+    background-color: white;
+
+}
+
+#logo-letters {
+    font-size: 100px;
+    font-weight: 700;
+    color: #03548f;
+}
+
+#logo-name {
+    margin-top: -50px;
+    color: #03548f;
+}
+
+#job{
+    font-size: 20px; 
+    color:#8e8c8c; 
+    font-weight: bold;
+    margin-top: 80px;
+}
+
+.card-title{
+    font-size: 20px;
+    font-weight: bold;
+    color: #03548f !important;
+}
+
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+.data-title{
+    font-weight: bold;
+    color: #03548f;
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: #03548f;
+    font-weight: bold;
+}
+
+/*Rounded conners on images*/
+img{
+    border-radius: 10px;
+}
